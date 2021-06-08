@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>W2Game</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">  
+
+  <!-- Typing effect -->
+  <link href="https://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">W2Game</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#games">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#topplayers">Top Players</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Typedtext -->
+  <header>
+    <div id="typedtext"></div>
+  </header>
+
+  <!-- Nav / Games -->
+  <section id="games">
+    <div class="container">
+      <div class="row">     
+
+        <h1>Games</h1>
+
+        <div class="main">
+        
+          <!-- Buttons -->
+          <div class="myBtn" id="myBtnContainer">
+            <button class="btnGames active" onclick="filterSelection('all')"> Show all</button>
+            <button class="btnGames" onclick="filterSelection('filter1')"> filter1</button>
+            <button class="btnGames" onclick="filterSelection('filter2')"> filter2</button>
+            <button class="btnGames" onclick="filterSelection('filter3')"> filter3</button>
+          </div>
+          
+          <!-- Game -->
+          <div class="row">
+            <ul>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter1">
+                    <div class="content">
+                      <img src="media/thumb/healthly.jpg" alt="Mountains" style="width:100%">
+                      <h4>Mountains</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter1">
+                    <div class="content">
+                    <img src="media/thumb/mcd.jpg" alt="Lights" style="width:100%">
+                      <h4>Lights</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter1">
+                    <div class="content">
+                    <img src="media/thumb/auto.jpg" alt="filter1" style="width:100%">
+                      <h4>Forest</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter2">
+                    <div class="content">
+                      <img src="media/thumb/nope.jpg" alt="Car" style="width:100%">
+                      <h4>Retro</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter2">
+                    <div class="content">
+                    <img src="media/thumb/travel.jpg" alt="Car" style="width:100%">
+                      <h4>Classic</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter3">
+                    <div class="content">
+                    <img src="media/thumb/auto.jpg" alt="Car" style="width:100%">
+                      <h4>Man</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter3">
+                    <div class="content">
+                      <img src="media/thumb/user2.jpg" alt="Car" style="width:100%">
+                      <h4>Girl</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter3">
+                    <div class="content">
+                    <img src="media/thumb/mcd.jpg" alt="Car" style="width:100%">
+                      <h4>Woman</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div>      
+                </a>
+              </li>
+              <li>
+                <a href="gameinfo.html">
+                  <div class="columnGames filter2">
+                    <div class="content">
+                    <img src="media/thumb/running.jpg" alt="Car" style="width:100%">
+                      <h4>Fast</h4>
+                      <p>Lorem ipsum dolor..</p>
+                    </div>
+                  </div> 
+                </a>
+              </li>                           
+            </ul>            
+          </div>
+
+        </div> 
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Players -->
+  <section id="topplayers" class="bg-light">
+    <div class="container">
+      <div class="row">
+        
+          <h2>Top Players</h2>
+
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <img src="media/thumb/user1.png" alt="Jane" style="width:100%">
+                <div class="containerCard">
+                  <h2>Jane Doe</h2>
+                  <p class="title">Highest score</p>
+                  <p>5.673 Score</p>             
+                </div>
+              </div>
+            </div>
+
+            <div class="column">
+              <div class="card">
+                <img src="media/thumb/user2.jpg" alt="Mike" style="width:100%">
+                <div class="containerCard">
+                  <h2>Mike Ross</h2>
+                  <p class="title">Highest playing time</p>
+                  <p>48h 36m</p>        
+                </div>
+              </div>
+            </div>
+            
+            <div class="column">
+              <div class="card">
+                <img src="media/thumb/user3.png" alt="John" style="width:100%">
+                <div class="containerCard">
+                  <h2>John Doe</h2>
+                  <p class="title">Most active user</p>
+                  <p>34 like & comment</p>
+                </div>
+              </div>
+            </div>
+          </div>      
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Szeteli Ádám | Friedszám Attila | Babai Krisztián</p>
+    </div>    
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
