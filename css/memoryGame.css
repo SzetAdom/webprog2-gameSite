@@ -1,0 +1,25 @@
+.container{
+    width: 600px;
+}
+.card{
+    width: 25%;
+}
+.card:hover{
+    background-color: #5a6268;
+}
+
+
+.card img{
+    width: 100%;
+    height: 100%;
+    background-color: #cbd3da;
+}
+
+.flipped{
+    visibility: hidden;
+}
+#timer, #found, #moves{
+    text-align: center;
+    font-size: xx-large;
+}
+
