@@ -5,9 +5,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     let speed = 16;
     let score = 0;
 
-    let snakeArr = [
-        {x: 13, y: 15}
-    ]; 
+    let player = {x: 13, y: 15}; 
 
     rnd(); 
 
@@ -24,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     function gameOver(){
         inputDir =  {x: 0, y: 0}; 
         alert("Game Over");
-        snakeArr = [{x: 13, y: 15}];            
+        player = {x: 13, y: 15};            
         speed = 16;
         score = 0;
         scoreBox.innerHTML = "Score: " + score; 
@@ -44,21 +42,21 @@ document.addEventListener('DOMContentLoaded', () =>{
     
     function gameEngine(){
 
-        if(snakeArr[0].x >= 18 || snakeArr[0].x <=0 || snakeArr[0].y >= 18 || snakeArr[0].y <=0){
+        if(player.x >= 18 || player.x <=0 || player.y >= 18 || player.y <=0){
             gameOver();
         }
         
-        snakeArr[0].x += inputDir.x;
-        snakeArr[0].y += inputDir.y;
+        player.x += inputDir.x;
+        player.y += inputDir.y;
 
         board.innerHTML = "";
-        snakeArr.forEach((e)=>{
-            snakeElement = document.createElement('div');
-            snakeElement.style.gridRowStart = e.y;
-            snakeElement.style.gridColumnStart = e.x;
-            snakeElement.classList.add('head');            
-            board.appendChild(snakeElement);
-        });
+        
+        playerElement = document.createElement('div');
+        playerElement.style.gridRowStart = player.y;
+        playerElement.style.gridColumnStart = player.x;
+        playerElement.classList.add('head');            
+        board.appendChild(playerElement);
+       
 
         foodElement = document.createElement('div');
         foodElement.style.gridRowStart = red.y;
@@ -102,45 +100,43 @@ document.addEventListener('DOMContentLoaded', () =>{
         foodElement.classList.add('purple')
         board.appendChild(foodElement);
 
-        if(snakeArr[0].y === red.y && snakeArr[0].x ===red.x){                
+        if(player.y === red.y && player.x ===red.x){                
             gameOver();
         }
 
-        if(snakeArr[0].y === orange.y && snakeArr[0].x ===orange.x){
+        if(player.y === orange.y && player.x ===orange.x){
             score -= 1;            
             scoreBox.innerHTML = "Score: " + score;
             rnd();            
         }
 
-        if(snakeArr[0].y === green.y && snakeArr[0].x ===green.x){
+        if(player.y === green.y && player.x ===green.x){
             score += 1;            
             scoreBox.innerHTML = "Score: " + score;            
             rnd(); 
         }
 
-        if(snakeArr[0].y === blue.y && snakeArr[0].x ===blue.x){
+        if(player.y === blue.y && player.x ===blue.x){
             score += 2;            
             scoreBox.innerHTML = "Score: " + score;            
             rnd(); 
         }
 
-        if(snakeArr[0].y === pink.y && snakeArr[0].x ===pink.x){
-
+        if(player.y === pink.y && player.x ===pink.x){
             if(speed >= 5){speed -= 5; }                   
             rnd(); 
         }
 
-        if(snakeArr[0].y === purple.y && snakeArr[0].x ===purple.x){            
+        if(player.y === purple.y && player.x ===purple.x){            
             speed += 5;
             rnd(); 
-        }
-        
+        }        
     }
 
     window.requestAnimationFrame(main);
-    window.addEventListener('keydown', e =>{
-        inputDir = {x: 0, y: 1} // Start the game
-        switch (e.key) {
+    window.addEventListener('keydown', k =>{
+        inputDir = {x: 0, y: 1} 
+        switch (k.key) {
             case "ArrowUp":
                 console.log("ArrowUp");
                 inputDir.x = 0;
