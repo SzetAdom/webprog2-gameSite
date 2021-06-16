@@ -28,9 +28,14 @@ for(let i = 0; i<16; i++){
     cards[i].children[0].setAttribute("class", "flipped");
     cards[i].addEventListener('click', cardClicked);
 }
+let firstClick = false;
 function cardClicked(){
-
-
+    if(!firstClick){
+        firstClick = true;
+        timer = window.setInterval(function() {
+            countDown();
+        }, 1000)
+    }
     if(firstSelected != null && secondSelected != null)
     {
         return;
@@ -53,6 +58,11 @@ function cardClicked(){
     {
         firstSelected = null;
         secondSelected = null;
+        moves--;
+        found++;
+        document.getElementById("moves").innerHTML = `<p>${moves} moves left</p>`;
+        document.getElementById("found").innerHTML = `<p>${found} pairs found</p>`;
+        checkForEnd();
         return;
 
     }
@@ -65,7 +75,48 @@ function cardClicked(){
             firstSelected = null;
             secondSelected = null;
         }, 750);
+        moves--;
+        document.getElementById("moves").innerHTML = `<p>${moves} moves left</p>`;
+        checkForEnd();
         return;
+    }
+}
+let time = 60;
+let moves = 20;
+let found = 0;
+
+function countDown() {
+    if (time > 0 ) { // so it doesn't go to -1
+        document.getElementById("timer").innerHTML = `<p>${time} seconds left</p>`;
+        time--;
+    } else {
+
+        clearInterval(timer);
+        loseGame();
+    }
+}
+
+function loseGame(){
+    document.getElementById("game").innerHTML = `You lost!<br>${time} seconds left ${moves} moves left<br>Press enter to play again!`;
+    document.getElementById("game").style.fontSize = "60px";
+    document.getElementById("game").style.textAlign = "center";
+    document.addEventListener('keyup', function(e){
+        if(e.keyCode == 13)
+            window.location.reload();
+    })
+
+}
+function checkForEnd(){
+    if(moves === 0){
+        loseGame()
+    }else if(found === 8){
+        document.getElementById("game").innerHTML = `You won!<br>Press enter to play again!`;
+        document.getElementById("game").style.fontSize = "60px";
+        document.getElementById("game").style.textAlign = "center";
+        document.addEventListener('keyup', function(e){
+            if(e.keyCode === 13)
+                window.location.reload();
+        })
     }
 }
 

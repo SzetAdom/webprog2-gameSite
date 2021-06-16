@@ -14,7 +14,12 @@
     height: 100%;
     background-color: #cbd3da;
 }
+
 .flipped{
     visibility: hidden;
+}
+#timer, #found, #moves{
+    text-align: center;
+    font-size: xx-large;
 }
 
