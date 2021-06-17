@@ -1,0 +1,18 @@
+.game-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.field {
+    width: 30px;
+    height: 30px;
+    background-color: darkgray;
+    margin: 2px;
+    color: black;
+}
+
+#game-container {
+    width: 544px;
+    height: 544;
+    background-color: grey;
+}
